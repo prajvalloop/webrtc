@@ -11,7 +11,14 @@ const server = http_1.default.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
     cors: {
-        origin: "*"
+        origin: [
+            "https://fc60-117-219-8-129.ngrok-free.app", // Your backend's ngrok, if the client is calling it
+            "https://8fbf-117-219-8-129.ngrok-free.app", // Your frontend's ngrok (or whichever domain serves your frontend)
+            "http://localhost:3000",
+            "https://e27f-123-63-63-45.ngrok-free.app/"
+            //                  // If needed for local dev
+            // Or you could allow all (less secure)
+        ],
     }
 });
 const userManager = new UserManager_1.UserManager();

@@ -7,7 +7,11 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server,{
     cors:{
-        origin:"*"
+        origin: [
+           "*"
+            //                  // If needed for local dev
+                                                  // Or you could allow all (less secure)
+          ],
     }
 });
 
