@@ -3,7 +3,7 @@ import { useParams, useSearchParams } from 'react-router-dom'
 import { io } from 'socket.io-client'
 
 
-const URL="http://localhost:3000"
+const URL="http://video.devsonline.in:3000"
 const Room = ({name,localAudioTrack,localVideoTrack}: {name:string | null,localAudioTrack:MediaStreamTrack | null,localVideoTrack:MediaStreamTrack | null}) => {
     const [searchParams,setSearchParams] =useSearchParams()
     // const name=searchParams.get('name')
